@@ -1,0 +1,345 @@
+Skip to main content  >
+Hackerone logo
+
+
+
+0xshalah
+
+Hai
+
+
+Security page
+Program guidelines
+Scope
+Hacktivity
+Thanks
+Updates
+Collaborators
+Program highlights
+Platform Standards
+Fully compliant with Platform Standards. 
+Top Response Efficiency
+This program's response efficiency is above 90%. 
+1 hour
+Average time to first response
+1 day, 2 hours
+Average time to triage
+1 month, 1 week
+Average time to bounty
+1 month, 1 week
+Average time from submission to bounty
+6 months, 2 weeks
+Average time to resolution
+Rewards summary
+Last updated on April 6, 2026. View changes 
+Each severity lists the 90-day average bounty and the percentage of total resolved reports, if applicable.
+Avg. bounty n/a
+16.98% submissions
+
+Avg. bounty $269
+44.34% submissions
+
+Avg. bounty $2,000
+30.66% submissions
+
+Avg. bounty $5,000
+8.02% submissions
+
+
+
+
+
+$150
+$250
+$2,000
+$5,000
+Scope exclusions
+Core Ineligible Findings are out of scope. 
+Learn more 
+Overview
+Last updated on August 19, 2026. View changes 
+Program Eligibility
+You must:
+Be the first to report an issue in order to be eligible for bounty on it (if a security bug is reported of which Box, Inc. is already aware, this will be treated as a duplicate and will not be eligible for bounty).
+Not be a current employee of Box, Inc. or its affiliates or subsidiaries, or an employee who has left Box, Inc., or its affiliates or subsidiaries within the past 12 months.
+Not be an immediate family member of a person employed by Box, Inc. or its subsidiaries or affiliates.
+Not be a resident of, or make your submission from, a country against which the United States has issued export sanctions or other trade restrictions (e.g., Cuba, Iran, North Korea, Sudan, and Syria).
+Not be in violation of any national, state, or local law or regulation.
+Public Disclosure
+This program does not allow public disclosure of reported vulnerabilities.
+Rules and Exclusions
+We seek to reward security researchers who help us keep people safe by reporting vulnerabilities in our services. Monetary bounties for such reports are entirely at Box's discretion, based on risk, impact, and other factors.
+The use of automated scanners is prohibited.
+Tax implications of any payouts are the sole responsibility of the reporter.
+The reports must include clear steps (Proof of Concept) to reproduce and re-validate the vulnerability. You can attach videos, images in standard formats.
+Provide all details including the Box account username, IP address and the date/timestamp of the vulnerability to support validation and reproduction of the issue.
+You may only test against your own Box accounts. Do not interact with an enterprise and/or personal Box account that you don’t own (such as by modifying or accessing data from the account).
+Do not access or attempt to access data that does not belong to you.
+Do not exploit a security issue you discover for any reason. (This includes demonstrating additional risk, such as attempted compromise of sensitive data or probing for additional issues.)
+Do not perform actions that may negatively affect Box or its users, such as: executing or attempting to execute any “Denial of Service” attack, posting, transmitting, uploading, linking to, sending or storing any malicious software and/or file, testing third-party applications, websites or services that integrate with or link to Box applications.
+Do not conduct attacks such as social engineering, phishing or unauthorized infrastructure access to employees of Box and Box's customers.
+Do not test the physical security of Box offices, employees, equipment, etc.
+Do not violate any law or disrupt or compromise any data that is not your own.
+Chaining of multiple bugs is ok as long as it does not put Box and/or its customer data at risk. We will evaluate the severity of each bug and what they can do when combined into a chain and consider rewards accordingly.
+Do not contact Box or any Box employees via email or any other means outside of the HackerOne platform
+By reporting a security bug or vulnerability, you give us the right to use your report for any purpose.
+Box is unable to issue rewards to individuals who are on sanctions lists, or who are in countries on sanctions lists. There may be additional restrictions on your ability to enter depending upon your local law.
+If you stumble upon any customer data during testing, please stop testing, inform Box, and remove any customer data from your possession immediately.
+Test accounts and related assets may only be used for good-faith security research under this program. They may not be used for personal storage, business use, collaboration unrelated to testing, app hosting, file hosting, or any non-testing purpose.
+Researchers may test only against accounts, enterprises, applications, developers, files, folders, shared links, API tokens, workflows, forms, and recipients that they own or explicitly control for testing.
+Researchers must not send collaboration invites, shared links, signature requests, notifications, workflow actions, emails, or other communications to third parties or non-controlled accounts.
+Mass scanning, indiscriminate automation, high-volume enumeration, excessive API use, and use of automated vulnerability scanners are prohibited. Any limited automation must be low-volume, narrowly targeted, and non-disruptive.
+Researchers must not use Box services in a way that consumes disproportionate shared resources, including storage, bandwidth, AI capacity, signing capacity, messaging, workflow execution, or compute.
+Do not exploit a vulnerability beyond the minimum steps necessary to safely demonstrate it on assets you own and control.
+Testing Instructions:
+When testing please keep in mind, automated scanners are prohibited. For us to better identify your Box accounts and your testing activity, please follow the instructions below.
+Personal Box Account:
+When creating your Box individual free account in our environment, please use your <hackeroneUsername>@wearehackerone.com as the email.
+For any additional Box test accounts you create in our environment, do not use Gmail or any other email domain. Instead, use plus-addressing on your HackerOne email alias, following this format: <hackeroneUsername>+<anyIdentifier>@wearehackerone.com. You can put any identifier you want after the + sign. (See HackerOne's Hacker Email Alias guidance.) Example User:
+Example HackerOne Username: boxH1
+Primary account: boxH1@wearehackerone.com
+Additional accounts: boxH1+test1@wearehackerone.com, boxH1+test2@wearehackerone.com, etc.
+If you already have multiple Box accounts for testing under Gmail or other domains, please update your existing Box account emails to follow the above wearehackerone.com plus-addressing format so it may help us to identify you.
+Developer Box Account:
+Please limit to creating only two developer accounts for testing.
+When creating your Box developer account in our environment, please append the "+dev" keyword with your hackerone email. For example: <hackeroneUsername>+dev@wearehackerone.com
+For any additional developer accounts you create, please append a numeric value after dev so we can best identify you testing in our environment. For example: <hackerone-username>+dev2@wearehackerone.com
+Accessing Advanced Features:
+After self-registering for a free Box account using your <hackeroneUsername>@wearehackerone.com email (per the Personal Box Account instructions above), you may request an account upgrade to access advanced features through our credential management feature on the program's Security Page.
+Upgrade Requirements:
+Signal ≥ 5
+Reputation ≥ 100
+Requests are typically processed within 24 hours.
+Note: This is an account upgrade — you will continue to use the same login credentials (email and password) you created at self-registration. No new credentials will be issued.
+Important: Upgraded accounts are monitored and must only be used for security research activities. Accounts used for any other purpose will be revoked and may result in program removal.
+Personal SignRequest Test Account:
+When creating your Sign Request free account, please use your <hackeroneUsername>@wearehackerone.com as the email
+If additional accounts are needed, please utilize the following format: <hackeroneUsername>+SR@wearehackerone.com For example: <hackeroneUsername>+SR1@wearehackerone.com, <hackeroneUsername>+SR2@wearehackerone.com, etc.
+Note: Sign Request assets (sr-staging-1.com and signrequest.com) are not eligible for bounty.
+Focus Areas:
+Some classes of vulnerabilities we would like to see in incoming reports:
+Server-side Remote Code Execution (RCE)
+Server-Side Request Forgery (SSRF)
+Stored/Reflected Cross-site Scripting (XSS)
+Cross-site Request Forgery (CSRF)
+SQL Injection (SQLi)
+Cross-Site Script Inclusion (XSSI)
+XML External Entity Attacks (XXE)
+XML Injection
+Authorization Vulnerabilities (Privilege Escalation, Insecure Direct Object Reference issues, etc.)
+Authentication Vulnerabilities (OAUTH, Session Hijacking, etc)
+Path/Directory Traversal Issues
+Information Disclosure - Customer PII and data, Box data
+Besides bugs around traditional web application vulnerabilities, we are also interested in bugs around collaboration permissions.
+Targets:
+Please check the scope section.
+Testing is limited to researcher-owned and researcher-controlled Box accounts, applications, and related assets created solely for the purpose of good-faith security testing under this program.
+Out of scope:
+Targets:
+Anything not declared as a target or in scope above should be considered out of scope for the purposes of this bug bounty. However, to clarify further, we are adding some examples of what is considered out of scope.
+Customer instances (e.g., company.app.box.com) and data are explicitly out of scope. Please refrain from performing any testing against instance(s) you don't own.
+Services other than the targets above are not eligible under our bug bounty program. For example, www.box.com, community.box.com are not included. While we often care about vulnerabilities affecting services we use, these services are governed by other disclosure policies. For such issues, please report to our VDP at https://www.box.com/about-us/security
+Production customer tenants, customer-managed enterprise accounts, managed users, and any accounts, enterprises, or data not owned and controlled by the researcher are out of scope.
+Reports of credentials found in public breach databases, credential leak aggregators, paste sites, or similar OSINT sources.
+Mobile application findings that are not exploitable without a jailbroken or rooted device are out of scope
+Vulnerabilities:
+The following finding types are specifically excluded from the bounty.
+Stack Traces/Verbose error messages
+HTTP 404 codes/pages or other HTTP non-200 codes/pages.
+Fingerprinting / banner disclosure on common/public services.
+Disclosure of known public files or directories, (e.g. robots.txt).
+Clickjacking and issues only exploitable through clickjacking.
+CSRF on forms that are available to anonymous users (e.g. the contact form). CSRF attacks that require knowledge of the CSRF token (e.g. attacks involving a local machine).
+Logout Cross-Site Request Forgery (logout CSRF).
+Presence of application or web browser ‘autocomplete’ or ‘save password’ functionality.
+Lack of Secure/HTTPOnly flags on non-sensitive Cookies.
+Weak Captcha / Captcha Bypass.
+Login or Forgot Password page brute force and account lockout not enforced.
+OPTIONS HTTP method enabled.
+Username / email enumeration.
+Missing HTTP security headers, specifically
+X-Frame-Options.
+X-XSS-Protection.
+X-Content-Type-Options.
+Content-Security-Policy, X-Content-Security-Policy, X-WebKit-CSP.
+Content-Security-Policy-Report-Only.
+Cache-Control and Pragma
+HTTP/DNS cache poisoning.
+SSL/TLS Issues, e.g. SSL Attacks such as BEAST, BREACH, Renegotiation attack.
+SSL Forward secrecy not enabled.
+SSL weak/insecure cipher suites.
+No Load testing (DoS/DDoS etc.) is allowed on the instance. This includes application DoS as well as network DoS.
+Self-XSS reports will not be accepted. Similarly, any XSS where local access is required (i.e. User-Agent Header injection) will not be accepted. The only exception will be if you can show a working off-path MiTM attack that will allow for the XSS to trigger.
+Vulnerabilities that are limited to unsupported browsers will not be accepted (i.e. "this exploit only works in IE6/IE7"). A list of supported browsers can be found here.
+Known vulnerabilities in used libraries, or the reports that a Box product uses an outdated third-party library (e.g. jQuery, Apache HttpComponents etc.) unless you can prove exploitability.
+Missing or incorrect SPF/DKIM/DMARC records of any kind.
+Information disclosure of non-confidential information (e. g. file id, folder id, user ID).
+The ability to upload/download viruses or malicious files to the platform.
+Subdomain takeovers will be investigated but are not bounty eligible
+Vulnerabilities in which the only impact is access to higher-tier paid features
+List of Commonly submitted False Positives:
+Please make sure the issue(s) don't fall under one of the following commonly submitted False Positives:
+Absence of clickjacking prevention on unauthenticated pages
+Session not expiring after password change in another browser
+Email bombing/Flooding/rate limiting. Abuse of platform for this purpose is specifically out of scope, please contact Box Support.
+Password Reset Token Not Expiring on Email Change
+Tab-nabbing vulnerabilities
+Malicious content hosted in Box.com
+For compromised user accounts, please contact Box Support.
+Box AI Scope & Exclusions
+Box AI features are in scope where they involve Box-controlled systems, data, permissions, or integrations. Reports must demonstrate a clear security impact within Box’s environment.
+In Scope
+The following classes of vulnerabilities related to Box AI are eligible:
+Unauthorized access to data via Box AI, including:
+Cross-user or cross-tenant data exposure
+Access to files, folders, metadata, or content not normally accessible to the user
+Permission or access control bypass involving Box AI
+Violations of Box ACLs, shared link restrictions, classification policies (e.g., Shield), or governance controls
+Prompt injection or manipulation that results in a security impact, such as:
+Unauthorized data access
+Execution of actions beyond the user’s permissions
+Bypass of security controls
+Abuse of AI-powered actions, tools, or agents to perform unauthorized operations (e.g., file access, sharing, modification, or API actions)
+Exposure of sensitive data through AI responses, including:
+Other users’ content
+Restricted enterprise data
+Sensitive metadata not normally visible to the user
+Authentication, authorization, or token-scoping issues involving AI features
+AI acting outside the effective permissions of the authenticated user
+Out of Scope
+The following are not eligible for bounty:
+Prompt injection or jailbreak techniques that do not demonstrate a security impact (e.g., no unauthorized data access, no privilege escalation, no control bypass)
+Model hallucinations, incorrect responses, or fabricated information that do not expose sensitive or unauthorized data
+Issues related to tone, alignment, safety behavior, or content moderation (e.g., the model produces disallowed or unexpected content without security impact)
+Known or generic LLM attack techniques (e.g., jailbreaks, prompt injections) without demonstrated impact in the Box environment
+Issues attributable solely to underlying third-party models (e.g., behavior inherent to models such as Anthropic Claude or other LLM providers) and not specific to Box’s implementation
+Claims of data exposure where the data is already accessible to the reporting user under normal permissions
+Attempts to extract system prompts, internal instructions, or model configuration that do not result in a security impact
+Report Requirements for AI Findings
+Reports involving Box AI must include:
+Exact prompt(s) used
+Relevant context (e.g., files, permissions, user role, shared links)
+Step-by-step reproduction instructions
+Clear demonstration of security impact (e.g., unauthorized data access, privilege escalation, or control bypass)
+Reports that do not demonstrate a concrete security impact within Box-controlled systems may be closed as informational.
+Public Acknowledgement Policy
+At this time, Box does NOT maintain a public facing list of externally reported issues and reporters.
+Privacy
+For details on how Box uses, processes, and protects personal data, please see Box's Privacy Policy at: https://www.box.com/legal/privacypolicy.
+Rewards:
+Bounty payouts and amount, if any, will be determined entirely in Box's sole discretion. We will consider the CVSS severity classification when deciding bounty amount for individual reports.
+Note: Multiple issues with a single root cause will only be eligible for a single bounty.
+Policy Changes
+Box may cancel this program or change this policy at any time. Please review the current version of this policy before performing any vulnerability testing or taking any other action based on the policy.
+Policy last updated on this date: August 8, 2026
+Top hackers
+See all hackers 
+1
+luqii
+luqii
+Reputation: 4k
+2
+freesec
+freesec
+Reputation: 432
+3
+m0chan
+m0chan
+Reputation: 285
+4
+yoghurtbrain
+yoghurtbrain
+Reputation: 210
+5
+imran0x01
+imran0x01
+Reputation: 162
+6
+gammarex
+gammarex
+Reputation: 136
+7
+mugalatoogin
+mugalatoogin
+Reputation: 119
+8
+h1-squirtle
+h1-squirtle
+Reputation: 91
+9
+yashvier_kosaraju
+yashvier_kosaraju
+Reputation: 90
+10
+hamza_g
+hamza_g
+Reputation: 90
+11
+ninetynine
+ninetynine
+Reputation: 88
+12
+h33tjev
+h33tjev
+Reputation: 88
+
+box_private
+Box BB
+
+http://box.com
+Bounty launched in Aug 2026
+Response efficiency: 97%
+Faster triage for your report
+Submit your report with the Report Assistant to provide all the information our team needs to
+start working on it right away.
+
+
+Submit report
+Submit without Report Assistant
+Rewards
+Severity
+
+Rewards
+
+
+
+Avg. bounty n/a
+16.98% submissions
+
+$150
+Avg. bounty $269
+44.34% submissions
+
+$250
+Avg. bounty $2,000
+30.66% submissions
+
+$2,000
+Avg. bounty $5,000
+8.02% submissions
+
+$5,000
+Stats
+Total bounties paid	$254,950
+Average bounty	$500
+Top bounty range	$2,000 - $5,000
+Bounties paid | 90 days	$64,750
+Reports received | 90 days	1109
+Last report resolved	3 days ago
+Reports resolved	215
+Hackers thanked	152
+Assets In Scope	12
+© HackerOne
+Opportunities
+Security
+Leaderboard
+Blog
+Status
+Docs
+Support
+Disclosure Guidelines
+Press
+Privacy
+Terms
+X
+
