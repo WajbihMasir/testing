@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kilau — Kopi yang dirawat, bukan diproduksi</title>
+<meta name="description" content="Kedai kopi single origin di Jakarta. Biji dari petani yang kami kenal, disangrai kecil setiap Jumat." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Geist+Mono:wght@500&display=swap" rel="stylesheet" />
+<style>
+/* Hallmark · pre-emit critique: P5 H4 E5 S4 R5 V5 */
+/* Hallmark · genre: editorial · macrostructure: Marquee Hero · theme: custom warm-clay editorial
+   enrichment: origin-marquee strip (CSS motion, no image) · nav: N9 edge-aligned · footer: Ft1 mast-headed
+   fonts: Fraunces (display) + Newsreader (body) + Geist Mono (wordmark/outlier) */
+
+:root {
+  /* color — warm oat anchor, hue ~80 */
+  --color-paper:    oklch(96% 0.012 80);
+  --color-paper-2:  oklch(92% 0.014 80);
+  --color-rule:     oklch(82% 0.012 80);
+  --color-neutral:  oklch(55% 0.012 80);
+  --color-muted:    oklch(42% 0.014 70);
+  --color-ink:      oklch(21% 0.015 60);
+  --color-accent:   oklch(56% 0.155 45);   /* clay / terracotta */
+  --color-focus:    oklch(54% 0.19 55);
+
+  /* type */
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body:    "Newsreader", ui-serif, Georgia, serif;
+  --font-mono:    "Geist Mono", ui-monospace, monospace;
+
+  /* scale — major third */
+  --text-xs:    0.7rem;
+  --text-sm:    0.8rem;
+  --text-base:  1rem;
+  --text-md:    1.25rem;
+  --text-lg:    1.6rem;
+  --text-xl:    2.1rem;
+  --text-2xl:   2.8rem;
+  --text-display: clamp(2.5rem, 8vw, 5.5rem);
+
+  /* spacing — 4pt */
+  --space-3xs: 0.125rem; --space-2xs: 0.25rem; --space-xs: 0.5rem;
+  --space-sm: 0.75rem;  --space-md: 1rem;     --space-lg: 1.5rem;
+  --space-xl: 2.5rem;   --space-2xl: 4rem;    --space-3xl: 6rem; --space-4xl: 9rem;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+
+  /* depth */
+  --z-sticky: 200;
+}
+
+html, body { overflow-x: clip; }
+* { box-sizing: border-box; margin: 0; }
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--color-accent); color: var(--color-paper); }
+
+a { color: inherit; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+.wrap { width: 100%; max-width: 74rem; margin-inline: auto; padding-inline: clamp(1.25rem, 5vw, 3rem); }
+
+/* wordmark — the outlier register (mono) */
+.wordmark {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: var(--text-md);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--color-ink);
+}
+.wordmark .dot { color: var(--color-accent); }
+
+/* ---- Nav · N9 edge-aligned minimal ---- */
+.nav {
+  position: sticky; top: 0; z-index: var(--z-sticky);
+  display: flex; align-items: center; justify-content: space-between;
+  padding-block: var(--space-md);
+  background: color-mix(in oklch, var(--color-paper) 88%, transparent);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--color-rule);
+}
+.nav__cta {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+  padding: 0.6rem 1rem;
+  min-height: 44px;
+  display: inline-flex; align-items: center;
+  transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+}
+.nav__cta:hover { background: var(--color-ink); color: var(--color-paper); }
+.nav__cta:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+
+/* ---- Hero · H1 Marquee ---- */
+.hero {
+  padding-block: clamp(3rem, 12vh, var(--space-4xl)) var(--space-2xl);
+}
+.hero__display {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-display);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+  text-wrap: balance;
+  animation: rise var(--dur-long) var(--ease-out) both;
+}
+.hero__display em { font-style: normal; color: var(--color-accent); }
+.hero__meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-top: var(--space-lg);
+}
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+/* ---- Origin marquee strip ---- */
+.marquee {
+  border-top: 1px solid var(--color-rule);
+  border-bottom: 1px solid var(--color-rule);
+  background: var(--color-paper-2);
+  overflow: hidden;
+  padding-block: var(--space-md);
+}
+.marquee__track {
+  display: inline-flex; align-items: center; gap: var(--space-xl);
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-lg);
+  letter-spacing: -0.01em;
+  animation: scroll 28s linear infinite;
+  will-change: transform;
+}
+.marquee__track span { color: var(--color-ink); }
+.marquee__track .sep { color: var(--color-accent); }
+@keyframes scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ---- Section scaffolding ---- */
+.section { padding-block: var(--space-3xl); border-top: 1px solid var(--color-rule); }
+.section__head { display: flex; align-items: baseline; gap: var(--space-sm); margin-bottom: var(--space-xl); }
+.mark { width: 9px; height: 9px; background: var(--color-accent); flex: none; transform: translateY(-0.2em); }
+.section__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--text-xl);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* ---- Origins ledger ---- */
+.ledger { list-style: none; padding: 0; display: grid; gap: 0; }
+.ledger__row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.7fr 2.2fr;
+  gap: var(--space-lg);
+  align-items: baseline;
+  padding-block: var(--space-lg);
+  border-top: 1px solid var(--color-rule);
+}
+.ledger__row:last-child { border-bottom: 1px solid var(--color-rule); }
+.ledger__name { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); letter-spacing: -0.01em; }
+.ledger__meta { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-muted); }
+.ledger__note { color: var(--color-muted); max-width: 52ch; }
+
+/* ---- Process steps ---- */
+.steps { list-style: none; padding: 0; display: grid; gap: var(--space-xl); max-width: 60rem; }
+.steps li { display: grid; grid-template-columns: auto 1fr; gap: var(--space-lg); align-items: start; }
+.steps__num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: var(--text-2xl);
+  line-height: 1;
+  color: var(--color-accent);
+  font-variant-numeric: tabular-nums;
+}
+.steps h3 { font-family: var(--font-display); font-weight: 600; font-size: var(--text-lg); letter-spacing: -0.01em; margin-bottom: var(--space-2xs); }
+.steps p { color: var(--color-muted); max-width: 50ch; }
+
+/* ---- Kedai ---- */
+.kedai { display: grid; grid-template-columns: 1.6fr 1fr; gap: var(--space-2xl); align-items: start; }
+.kedai__lede { font-family: var(--font-display); font-weight: 400; font-size: var(--text-lg); line-height: 1.4; max-width: 38ch; }
+.kedai__body { color: var(--color-muted); margin-top: var(--space-md); max-width: 52ch; }
+.kedai__info { font-family: var(--font-mono); font-size: var(--text-sm); line-height: 1.9; color: var(--color-ink); }
+.kedai__info dt { color: var(--color-muted); text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--text-xs); margin-top: var(--space-md); }
+.kedai__info dd { margin: 0; }
+
+/* ---- Newsletter CTA · C2 ---- */
+.signup { border-top: 1px solid var(--color-rule); }
+.signup__title { font-family: var(--font-display); font-weight: 600; font-size: var(--text-2xl); letter-spacing: -0.02em; max-width: 20ch; line-height: 1.05; margin-bottom: var(--space-xl); }
+.inline-form { display: flex; flex-wrap: wrap; gap: var(--space-sm); max-width: 34rem; }
+.inline-form input {
+  flex: 1 1 16rem; min-width: 0;
+  font-family: var(--font-body); font-size: var(--text-base);
+  padding: 0.85rem 1rem; min-height: 48px;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
+}
+.inline-form input::placeholder { color: var(--color-neutral); }
+.inline-form input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.inline-form button {
+  font-family: var(--font-mono); font-size: var(--text-sm); letter-spacing: 0.02em;
+  padding: 0 1.4rem; min-height: 48px;
+  background: var(--color-ink); color: var(--color-paper);
+  border: 1px solid var(--color-ink); cursor: pointer;
+  transition: background-color var(--dur-micro) var(--ease-out), color var(--dur-micro) var(--ease-out);
+}
+.inline-form button:hover { background: var(--color-paper); color: var(--color-ink); }
+.inline-form button:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 3px; }
+.signup__note { font-size: var(--text-sm); color: var(--color-muted); margin-top: var(--space-md); }
+
+/* ---- Footer · Ft1 mast-headed ---- */
+.footer { border-top: 1px solid var(--color-ink); }
+.footer__band {
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: var(--space-lg);
+  padding-block: var(--space-xl);
+}
+.footer__tag { color: var(--color-muted); font-size: var(--text-sm); max-width: 32ch; }
+.footer__links { font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.04em; display: flex; gap: var(--space-md); flex-wrap: wrap; }
+.footer__links a { text-decoration: none; color: var(--color-ink); padding-bottom: 2px; border-bottom: 1px solid transparent; transition: border-color var(--dur-micro) var(--ease-out); white-space: nowrap; }
+.footer__links a:hover { border-color: var(--color-accent); }
+.footer__meta {
+  font-family: var(--font-mono); font-size: var(--text-xs); letter-spacing: 0.04em;
+  color: var(--color-muted); border-top: 1px solid var(--color-rule);
+  padding-block: var(--space-md);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 60rem) {
+  .ledger__row { grid-template-columns: 1fr; gap: var(--space-2xs); }
+  .ledger__note { max-width: none; }
+  .kedai { grid-template-columns: 1fr; gap: var(--space-xl); }
+}
+@media (max-width: 40rem) {
+  .section { padding-block: var(--space-2xl); }
+  .steps li { grid-template-columns: 1fr; gap: var(--space-2xs); }
+  .steps__num { font-size: var(--text-xl); }
+  .footer__band { flex-direction: column; align-items: flex-start; }
+  .hero__display { max-width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .marquee__track { animation: none; }
+  .hero__display { animation: none; }
+  *, *::before, *::after { transition-duration: 150ms !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="nav wrap">
+  <a class="wordmark" href="#top">Kilau<span class="dot">.</span></a>
+  <a class="nav__cta" href="#pesan">Pesan biji</a>
+</header>
+
+<main id="top">
+
+  <section class="hero wrap">
+    <h1 class="hero__display">Kopi yang dirawat, bukan <em>diproduksi</em>.</h1>
+    <p class="hero__meta">Kedai &amp; roastery · Jakarta · Sejak 2019</p>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Gayo</span><span class="sep">·</span><span>Mandheling</span><span class="sep">·</span><span>Toraja</span><span class="sep">·</span><span>Kintamani</span><span class="sep">·</span><span>Temanggung</span><span class="sep">·</span><span>Wamena</span><span class="sep">·</span>
+      <span>Gayo</span><span class="sep">·</span><span>Mandheling</span><span class="sep">·</span><span>Toraja</span><span class="sep">·</span><span>Kintamani</span><span class="sep">·</span><span>Temanggung</span><span class="sep">·</span><span>Wamena</span><span class="sep">·</span>
+    </div>
+  </div>
+
+  <section class="section wrap" id="asal">
+    <div class="section__head">
+      <span class="mark" aria-hidden="true"></span>
+      <h2 class="section__title">Asal yang kami rawat</h2>
+    </div>
+    <ul class="ledger">
+      <li class="ledger__row">
+        <p class="ledger__name">Gayo</p>
+        <p class="ledger__meta">Aceh · arabika</p>
+        <p class="ledger__note">Cerah dan bersih, sedikit floral. Dipetik di ketinggian 1.400&nbsp;m, dicuci bersih sebelum kami terima.</p>
+      </li>
+      <li class="ledger__row">
+        <p class="ledger__name">Mandheling</p>
+        <p class="ledger__meta">Sumatra · natural</p>
+        <p class="ledger__note">Badak, cokelat, sedikit herbal. Diproses kering di atas ragi bambu selama tiga minggu.</p>
+      </li>
+      <li class="ledger__row">
+        <p class="ledger__name">Toraja</p>
+        <p class="ledger__meta">Sulawesi · semi-wash</p>
+        <p class="ledger__note">Karamel dan buah merah. Tubuh tebal, akhir panjang — yang paling kami seduh pagi.</p>
+      </li>
+      <li class="ledger__row">
+        <p class="ledger__name">Kintamani</p>
+        <p class="ledger__meta">Bali · organik</p>
+        <p class="ledger__note">Jeruk dan teh hijau. Tumbuh di antara pohon jeruk, jadi aromanya selalu terang.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section wrap" id="proses">
+    <div class="section__head">
+      <span class="mark" aria-hidden="true"></span>
+      <h2 class="section__title">Dari pohon ke cangkir</h2>
+    </div>
+    <ol class="steps">
+      <li>
+        <span class="steps__num">01</span>
+        <div>
+          <h3>Petik tangan</h3>
+          <p>Petani memetik hanya biji merah tiap minggu. Tidak ada mesin, tidak ada campur matang.</p>
+        </div>
+      </li>
+      <li>
+        <span class="steps__num">02</span>
+        <div>
+          <h3>Sangrai kecil</h3>
+          <p>Kami sangrai dalam batch 5&nbsp;kg tiap Jumat. Profil rasa dicatat, bukan ditebak.</p>
+        </div>
+      </li>
+      <li>
+        <span class="steps__num">03</span>
+        <div>
+          <h3>Giling harian</h3>
+          <p>Biji digiling pagi hari, hanya secukupnya untuk satu hari kedai. Segar, bukan disimpan.</p>
+        </div>
+      </li>
+      <li>
+        <span class="steps__num">04</span>
+        <div>
+          <h3>Seduh di kedai</h3>
+          <p>Disajikan oleh barista yang tahu asalnya. Kamu boleh tanya — kami jawab, bukan membaca kartu.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section wrap" id="kedai">
+    <div class="section__head">
+      <span class="mark" aria-hidden="true"></span>
+      <h2 class="section__title">Mampir ke kedai</h2>
+    </div>
+    <div class="kedai">
+      <div>
+        <p class="kedai__lede">Tempat duduk kecil, jendela besar, dan satu mesin yang kami rawat seperti tanaman.</p>
+        <p class="kedai__body">Tidak ada wifi cepat yang dipamerkan, tapi kopinya jujur. Datang pagi untuk seduh pour-over, atau sore untuk es kopi susu yang tidak terlalu manis. Kamu boleh bawa buku; kami sediakan tempat.</p>
+      </div>
+      <dl class="kedai__info">
+        <dt>Alamat</dt>
+        <dd>Jl. Proklamasi No.&nbsp;12, Jakarta Pusat</dd>
+        <dt>Jam buka</dt>
+        <dd>07.00 – 18.00 · Senin tutup</dd>
+        <dt>Telepon</dt>
+        <dd>(021) 555-0192</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section class="section wrap signup" id="pesan">
+    <h2 class="signup__title">Dapatkan kabar roasting tiap Jumat.</h2>
+    <form class="inline-form" action="#" method="post" onsubmit="return false">
+      <label class="sr-only" for="email">Alamat email</label>
+      <input id="email" type="email" name="email" placeholder="nama@email.com" autocomplete="email" />
+      <button type="submit">Langganan →</button>
+    </form>
+    <p class="signup__note">Satu email tiap Jumat. Tanpa spam, tanpa promo diskon palsu.</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__band">
+      <span class="wordmark">Kilau<span class="dot">.</span></span>
+      <p class="footer__tag">Kopi single origin, dari petani yang kami kenal ke cangkirmu.</p>
+      <nav class="footer__links" aria-label="Kaki">
+        <a href="#asal">Asal</a>
+        <a href="#proses">Proses</a>
+        <a href="#kedai">Kedai</a>
+        <a href="#pesan">Pesan</a>
+      </nav>
+    </div>
+    <p class="footer__meta">Jl. Proklamasi 12, Jakarta · Buka 07–18 · © 2026 Kilau Roastery</p>
+  </div>
+</footer>
+
+</body>
+</html>
